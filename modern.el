@@ -74,11 +74,11 @@
 ;;; Appearance
 
 ;; Show the column number in the modeline.
-(column-number-mode t)
+(column-number-mode)
 
 ;; Match parentheses.
 (require 'paren)
-(show-paren-mode t)
+(show-paren-mode)
 (setq show-paren-delay 0)
 
 ;; Flexibly resize the window.
@@ -87,38 +87,20 @@
 
 ;;; Formatting
 
-;; Use spaces for indentation.  Include a (potentially-untracked)
-;; `.dir-locals.el' file in the root directory of projects that use tabs.  For
-;; more info, do <f1> r and then C-f Directory Variables RET RET.
-(setq-default indent-tabs-mode nil)
-
-;; Use the more-or-less standard "80-column rule."
+;; Default to the commonly-employed "80-column rule."
 (setq-default fill-column 80)
-
-;; Cleanup whitespace.
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq require-final-newline t)
 
 
 ;;; Features
 
-;; Delete selected text when you start typing.
-(delete-selection-mode)
-
-;; Be camelcase-aware when moving through and deleting words.
-(global-subword-mode)
-
-;; Quickly browse through directories.
-(ido-mode t)
+;; Quickly switch between open files and navigate through directories.
+(require 'ido)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
 
 ;; Enable C-x C-j for dired-jump.
 (require 'dired-x)
-
-;; Auto-indent with opening and closing braces.
-(electric-indent-mode)
-
-;; Auto-pair parentheses, brackets and quotes.
-(electric-pair-mode)
 
 
 ;;; Overrides
@@ -187,7 +169,8 @@
    (global-unset-key (kbd (format "C-%s" number))))
  (number-sequence 0 9))
 
-;; Use C-c for copy, C-x for cut, and C-v for paste.
+;; Use C-c for copy, C-x for cut, and C-v for paste.  (Also delete text as you
+;; begin typing or paste.)
 (cua-mode)
 
 ;; Use Vi's navigation keys: h (left), j (down), k (up) and l (right).  "j"
