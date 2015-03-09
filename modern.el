@@ -89,14 +89,8 @@
 
 ;; Use spaces for indentation.  Include a (potentially-untracked)
 ;; `.dir-locals.el' file in the root directory of projects that use tabs.  For
-;; more info, do `<f1> r' and `C-f Directory Variables RET RET'.
+;; more info, do <f1> r and then C-f Directory Variables RET RET.
 (setq-default indent-tabs-mode nil)
-
-;; Auto-indent with opening and closing braces.
-(electric-indent-mode)
-
-;; Auto-pair parentheses, brackets and quotes.
-(electric-pair-mode)
 
 ;; Use the more-or-less standard "80-column rule."
 (setq-default fill-column 80)
@@ -119,6 +113,12 @@
 
 ;; Enable C-x C-j for dired-jump.
 (require 'dired-x)
+
+;; Auto-indent with opening and closing braces.
+(electric-indent-mode)
+
+;; Auto-pair parentheses, brackets and quotes.
+(electric-pair-mode)
 
 
 ;;; Overrides
@@ -156,14 +156,14 @@
        ;; Navigate with the mouse rather than by screenfuls.
        "C-v" "M-v"
 
-       ;; Use C-f for find and C-r for find and replace. Replace control
-       ;; with meta for the regexp version.
+       ;; Use C-f for find and C-r for find and replace.  Replace control with
+       ;; meta for the regexp version.
        "C-s" "C-M-s" "M-%" "C-M-%"
 
        ;; Use C-o for opening, C-b for switching, and C-s for saving.
        "C-x C-f" "C-x b" "C-x s"
 
-       ;; Use C-w to close. Also, C-w is bound to kill-this-buffer, which only
+       ;; Use C-w to close.  Also, C-w is bound to kill-this-buffer, which only
        ;; prompts when killing unsaved buffers.
        "C-x k"
 
@@ -180,8 +180,8 @@
        "C-M-k"))
   (global-unset-key (kbd key)))
 
-;; Unset the number keys, they are rarely if ever useful and more often are
-;; pressed accidentally.
+;; Unset the number keys.  They are rarely if ever useful, and with these
+;; bindings they are more often pressed accidentally.
 (mapc
  (lambda (number)
    (global-unset-key (kbd (format "C-%s" number))))
@@ -190,9 +190,9 @@
 ;; Use C-c for copy, C-x for cut, and C-v for paste.
 (cua-mode)
 
-;; Use Vi's navigation keys: h (left), j (down), k (up) and l (right). "j" looks
-;; like a down arrow; "h" is on the left, and "l" is on the right. By process of
-;; elimination, "k" must mean "up".
+;; Use Vi's navigation keys: h (left), j (down), k (up) and l (right).  "j"
+;; looks like a down arrow; "h" is on the left, and "l" is on the right.  By
+;; process of elimination, "k" must mean "up".
 (global-set-key (kbd "C-h") 'backward-char)
 (global-set-key (kbd "M-h") 'backward-word)
 (global-set-key (kbd "C-M-h") 'backward-sexp)
@@ -224,7 +224,7 @@
 ;; Use C-w to close, like in a web browser.
 (global-set-key (kbd "C-w") 'kill-this-buffer)
 
-;; Use C-f for find and C-r for find and replace. Replace control with meta for
+;; Use C-f for find and C-r for find and replace.  Replace control with meta for
 ;; the regexp version.
 (global-set-key (kbd "C-f") 'isearch-forward)
 (define-key isearch-mode-map (kbd "C-s") nil)
@@ -233,7 +233,7 @@
 (global-set-key (kbd "C-r") 'query-replace)
 (global-set-key (kbd "M-r") 'query-replace-regexp)
 
-;; Use C-0, C-1, C-2 and C-3 for window manipulation. (Exchange "C-x" for "C".)
+;; Use C-0, C-1, C-2 and C-3 for window manipulation.  (Exchange "C-x" for "C".)
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "C-1") 'delete-other-windows)
 (global-set-key (kbd "C-2") 'split-window-below)
@@ -246,7 +246,7 @@
 (global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "M-e") 'eval-buffer)
 
-;; Use C-t and M-t to kill lines and expressions. "t" as in "terminate."
+;; Use C-t and M-t to kill lines and expressions.  "t" as in "terminate."
 (global-set-key (kbd "C-t") 'kill-line)
 (global-set-key (kbd "M-t") 'kill-sexp)
 
