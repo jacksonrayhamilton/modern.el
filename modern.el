@@ -114,9 +114,6 @@
 ;; Just create new files when looking for non-existent ones.
 (setq confirm-nonexistent-file-or-buffer nil)
 
-;; The `*scratch*' buffer is unnecessary for non-Lisp programmers.
-(kill-buffer-if-not-modified "*scratch*")
-
 
 ;;; Keybindings
 
