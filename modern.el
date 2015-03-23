@@ -48,7 +48,10 @@ editing capabilities and experience."
     (global-unset-key (kbd key))))
 
 (defun modern-enable ()
-  "Enable modern settings for text editing."
+  "Enable modern settings for text editing.
+
+This function causes irreversible side-effects, so if you want to
+revert them, restart Emacs."
 
 
   ;;; Appearance

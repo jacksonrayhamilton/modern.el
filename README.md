@@ -11,9 +11,15 @@ without imposing too many opinionated features on them.
 But if they want some opinionated (even better) defaults, then they can always
 enable `modern-opinionated`.
 
-## Installation:
+## Installation
 
-From your terminal:
+First download and install Emacs for [GNU/Linux][], [Mac OS][] or [Windows][].
+
+[GNU/Linux]: http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.gz
+[Mac OS]: http://emacsformacosx.com/
+[Windows]: http://ftp.gnu.org/gnu/emacs/windows/emacs-24.4-bin-i686-pc-mingw32.zip
+
+From your terminal (*nixes):
 
 ```bash
 cd ~/.emacs.d
@@ -22,7 +28,17 @@ cd lisp
 git clone https://github.com/jacksonrayhamilton/modern.el.git
 ```
 
-In your `~/.emacs` or `~/.emacs.d/init.el` file:
+Or from `cmd.exe` (Windows):
+
+```bat
+cd %HOMEPATH%\AppData\Roaming\.emacs.d
+mkdir lisp
+cd lisp
+git clone https://github.com/jacksonrayhamilton/modern.el.git
+```
+
+In your `~/.emacs` file (*nixes) or `C:\Users\USER\AppData\Roaming\.emacs`
+(Windows):
 
 ```lisp
 (add-to-list 'load-path "~/.emacs.d/lisp/modern.el")
@@ -31,18 +47,18 @@ In your `~/.emacs` or `~/.emacs.d/init.el` file:
 (modern-enable)
 ```
 
-## Keys:
+## Keys
 
 Items in italics are default Emacs shortcuts, and are mentioned for the sake of
 beginners.  All other shortcuts are enabled by this package, and their defaults
 (like <kbd>Alt W</kbd> for "copy") are disabled.
 
-### Emacs essentials:
+### Emacs essentials
 
 - _<kbd>F1</kbd>: Help_
 - _<kbd>Ctrl G</kbd>: Cancel_
 
-### Basic text manipulation:
+### Basic text manipulation
 
 - <kbd>Ctrl Z</kbd>: Undo
 - <kbd>Ctrl C</kbd>: Copy
@@ -50,7 +66,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl V</kbd>: Paste
 - <kbd>Ctrl A</kbd>: Select all
 
-### Files:
+### Files
 
 - <kbd>Ctrl O</kbd>: Open / create a file
 - <kbd>Ctrl B</kbd>: Switch to another open file
@@ -59,7 +75,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl W</kbd>: Close
 - <kbd>Ctrl /</kbd>: View directory
 
-### Searching:
+### Searching
 
 - <kbd>Ctrl F</kbd>: Find
 - <kbd>Alt F</kbd>: Find by regular expression
@@ -68,7 +84,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 
 Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 
-### Screen sections:
+### Screen sections
 
 - <kbd>Ctrl 0</kbd>: Hide the focused screen section
 - <kbd>Ctrl 1</kbd>: Show only the focused screen section
@@ -76,7 +92,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl 3</kbd>: Split screen vertically
 - <kbd>Alt B</kbd>: Switch to another section
 
-### Text navigation:
+### Text navigation
 
 - <kbd>Ctrl H</kbd>: Back 1 character
 - <kbd>Alt H</kbd>: Back 1 word
@@ -89,7 +105,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl ,</kbd>: Beginning of line
 - <kbd>Ctrl .</kbd>: End of line
 
-### Advanced text manipulation:
+### Advanced text manipulation
 
 - _<kbd>Ctrl Space</kbd>: Start selecting text_
 - _<kbd>Ctrl D</kbd>: Delete 1 character ahead_
@@ -101,7 +117,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt ;</kbd>: Insert a comment or comment-out a selection_
 - _<kbd>Alt Q</kbd>: Fit text within the 80-character column mark_
 
-### Useful Emacs utilities:
+### Useful Emacs utilities
 
 - _<kbd>Alt X</kbd>: Execute a command by name_
   - _<kbd>Alt X customize</kbd>: Customize Emacs behavior_
@@ -109,14 +125,36 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt !</kbd>: Execute a shell command_
 - _<kbd>Alt :</kbd>: Evaluate an Emacs Lisp expression_
 
-### Interactive development:
+### Interactive development
 
 - <kbd>Ctrl E</kbd>: Evaluate expression before cursor
 - <kbd>Alt E</kbd>: Evaluate file
 
-## Recommendations:
+## Features
 
-### Caps Lock -> Ctrl
+- More visual cues
+- Menus and toolbars are hidden (Opinionated)
+- Formatting
+  - Use 80-column rule
+  - Use spaces for indentation (Opinionated)
+  - Strip trailing whitespace (Opinionated)
+  - End all files with newlines (Opinionated)
+- Quickly change and search directories with fuzzy matching
+- Auto-pair parentheses and quotation marks (Opinionated)
+- Less disruptive prompts and fewer of them
+- Hide uninteresting files in the directory view (Opinionated)
+
+Enable "(Opinionated)" features by doing `(setq modern-opinionated t)` before
+calling `(modern-enable)` in your `.emacs` file, like so:
+
+```lisp
+(setq modern-opinionated t)
+(modern-enable)
+```
+
+## Recommendations
+
+### Change <kbd>Caps Lock</kbd> to <kbd>Ctrl</kbd>
 
 Remap your <kbd>Caps Lock</kbd> key to <kbd>Ctrl</kbd>.  This may seem like a
 weird and hard thing to do, but it isn't, and you will find it is much more
@@ -127,7 +165,7 @@ also relatively large, making it easier to press.  See these
 
 ### Packages
 
-Try out some of these awesome packages:
+If you want to extend Emacs further, try out some of these awesome packages:
 
 - [auto-complete](https://github.com/auto-complete/auto-complete) - Type big
   words with few keystrokes
