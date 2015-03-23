@@ -61,13 +61,13 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl .</kbd>: End of line
 
 ### Advanced text manipulation:
-- <kbd>Alt Y</kbd>: Cycle through previous copies and pastes (after pressing
-  <kbd>Ctrl V</kbd>)
 - _<kbd>Ctrl D</kbd>: Delete 1 character ahead_
 - _<kbd>Alt D</kbd>: Delete 1 word ahead_
 - _<kbd>Alt Backspace</kbd>: Delete 1 word behind_
 - <kbd>Ctrl Alt D</kbd>: Delete expression
 - _<kbd>Ctrl Shift Backspace</kbd>: Delete line_
+- _<kbd>Alt Y</kbd>: Cycle through previous copies and pastes (after pressing
+  <kbd>Ctrl V</kbd>)_
 - _<kbd>Alt ;</kbd>: Insert a comment or comment-out a selection_
 - _<kbd>Alt Q</kbd>: Fit text within the 80-character column mark_
 
