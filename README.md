@@ -8,6 +8,29 @@ that are either familiar or more ergonomic.
 The goal of this package is make new and experienced Emacs users more productive
 without imposing too many opinionated features on them.
 
+But if they want some opinionated (even better) defaults, then they can always
+enable `modern-opinionated`.
+
+## Installation:
+
+From your terminal:
+
+```bash
+cd ~/.emacs.d
+mkdir -p lisp
+cd lisp
+git clone https://github.com/jacksonrayhamilton/modern.el.git
+```
+
+In your `~/.emacs` or `~/.emacs.d/init.el` file:
+
+```lisp
+(add-to-list 'load-path "~/.emacs.d/lisp/modern.el")
+(require 'modern)
+(setq modern-opinionated t) ; Entirely optional
+(modern-enable)
+```
+
 ## Keys:
 
 Items in italics are default Emacs shortcuts, and are mentioned for the sake of
