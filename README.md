@@ -15,10 +15,12 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 (like <kbd>Alt W</kbd> for "copy") are disabled.
 
 ### Emacs essentials:
+
 - _<kbd>F1</kbd>: Help_
 - _<kbd>Ctrl G</kbd>: Cancel_
 
 ### Basic text manipulation:
+
 - <kbd>Ctrl Z</kbd>: Undo
 - <kbd>Ctrl C</kbd>: Copy
 - <kbd>Ctrl X</kbd>: Cut
@@ -26,6 +28,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl A</kbd>: Select all
 
 ### Files:
+
 - <kbd>Ctrl O</kbd>: Open / create a file
 - <kbd>Ctrl B</kbd>: Switch to another open file
 - <kbd>Ctrl S</kbd>: Save
@@ -34,6 +37,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl /</kbd>: View directory
 
 ### Searching:
+
 - <kbd>Ctrl F</kbd>: Find
 - <kbd>Alt F</kbd>: Find by regular expression
 - <kbd>Ctrl R</kbd>: Find and replace
@@ -42,6 +46,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 
 ### Screen sections:
+
 - <kbd>Ctrl 0</kbd>: Hide the focused screen section
 - <kbd>Ctrl 1</kbd>: Show only the focused screen section
 - <kbd>Ctrl 2</kbd>: Split screen horizontally
@@ -49,6 +54,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Alt B</kbd>: Switch to another section
 
 ### Text navigation:
+
 - <kbd>Ctrl H</kbd>: Back 1 character
 - <kbd>Alt H</kbd>: Back 1 word
 - <kbd>Ctrl Alt H</kbd>: Back 1 expression
@@ -61,6 +67,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl .</kbd>: End of line
 
 ### Advanced text manipulation:
+
 - _<kbd>Ctrl Space</kbd>: Start selecting text_
 - _<kbd>Ctrl D</kbd>: Delete 1 character ahead_
 - _<kbd>Alt D</kbd>: Delete 1 word ahead_
@@ -72,6 +79,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt Q</kbd>: Fit text within the 80-character column mark_
 
 ### Useful Emacs utilities:
+
 - _<kbd>Alt X</kbd>: Execute a command by name_
   - _<kbd>Alt X customize</kbd>: Customize Emacs behavior_
   - _<kbd>Alt X list-packages</kbd>: Find and install extensions_
@@ -79,5 +87,33 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt :</kbd>: Evaluate an Emacs Lisp expression_
 
 ### Interactive development:
+
 - <kbd>Ctrl E</kbd>: Evaluate expression before cursor
 - <kbd>Alt E</kbd>: Evaluate file
+
+## Recommendations:
+
+### Caps Lock -> Ctrl
+
+Remap your <kbd>Caps Lock</kbd> key to <kbd>Ctrl</kbd>.  This may seem like a
+weird and hard thing to do, but it isn't, and you will find it is much more
+convenient to have 2-3 <kbd>Ctrl</kbd> keys than to have a key exclusively for
+shouting at people on the Internet.  On many keyboards <kbd>Caps Lock</kbd> is
+also relatively large, making it easier to press.  See these
+[instructions](http://emacswiki.org/emacs/MovingTheCtrlKey).
+
+### Packages
+
+Try out some of these awesome packages:
+
+- [auto-complete](https://github.com/auto-complete/auto-complete) - Type big
+  words with few keystrokes
+- [expand-region](https://github.com/magnars/expand-region.el) - Select bigger
+  and bigger chunks of text
+- [flycheck](https://github.com/flycheck/flycheck) - Find errors in your code as
+  you type
+- [magit](https://github.com/magit/magit) - A faster way to use Git
+- [multiple-cursors](https://github.com/magnars/multiple-cursors.el) - Select
+  and edit multiple chunks of text simultaneously
+- [yasnippet](https://github.com/capitaomorte/yasnippet) - Expand abbreviations
+  into templates, interactively
