@@ -57,8 +57,7 @@
 ;; - Control 3: Split screen vertically
 
 ;; Advanced text manipulation:
-;; - Control T: Delete line
-;; - Alt T: Delete expression
+;; - Control Alt D: Delete expression
 
 ;; Interactive development:
 ;; - Control E: Evaluate expression
@@ -155,7 +154,7 @@
        ;; Use C-e to eval the last sexp.
        "C-x C-e"
 
-       ;; Use M-t to kill sexps.
+       ;; Use C-M-d to kill sexps.
        "C-M-k"))
   (global-unset-key (kbd key)))
 
@@ -226,9 +225,8 @@
 (global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "M-e") 'eval-buffer)
 
-;; Use C-t and M-t to kill lines and expressions.  "t" as in "terminate."
-(global-set-key (kbd "C-t") 'kill-line)
-(global-set-key (kbd "M-t") 'kill-sexp)
+;; Use C-M-d to kill expressions.
+(global-set-key (kbd "C-M-d") 'kill-sexp)
 
 (provide 'modern)
 

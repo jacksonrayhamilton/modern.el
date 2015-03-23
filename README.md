@@ -47,8 +47,7 @@ without imposing too many opinionated features on them.
 - <kbd>Control 3</kbd>: Split screen vertically
 
 ### Advanced text manipulation:
-- <kbd>Control T</kbd>: Delete line
-- <kbd>Alt T</kbd>: Delete expression
+- <kbd>Control Alt D</kbd>: Delete expression
 
 ### Interactive development:
 - <kbd>Control E</kbd>: Evaluate expression
