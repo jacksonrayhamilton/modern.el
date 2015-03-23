@@ -18,58 +18,6 @@
 ;; The goal of this package is make new and experienced Emacs users more
 ;; productive without imposing too many opinionated features on them.
 
-;; Keys:
-
-;; Basic text manipulation:
-;; - Control C: Copy
-;; - Control X: Cut
-;; - Control V: Paste
-;; - Control A: Select all
-
-;; Navigation:
-;; - Control H: Back 1 character
-;; - Alt H: Back 1 word
-;; - Control Alt H: Back 1 expression
-;; - Control J: Next line
-;; - Control K: Previous line
-;; - Control L: Forward 1 character
-;; - Alt L: Forward 1 word
-;; - Control Alt L: Forward 1 expression
-;; - Control ,: Beginning of line
-;; - Control .: End of line
-
-;; Files:
-;; - Control O: Open a file (or create a new one)
-;; - Control B: Switch to another open file
-;; - Control S: Save the current file
-;; - Control Alt S: Save the current file with a different name
-;; - Control W: Close the current file
-
-;; Searching:
-;; - Control F: Find
-;; - Alt F: Find by regular expression
-;; - Control R: Find and replace
-;; - Alt R: Find and replace by regular expression
-
-;; Screen sections:
-;; - Control 0: Hide the focused section
-;; - Control 1: Show only the focused section
-;; - Control 2: Split screen horizontally
-;; - Control 3: Split screen vertically
-;; - Alt B: Switch to another visible section
-
-;; Advanced text manipulation:
-;; - Alt V: Paste the previous paste (immediately after pasting with Control V)
-;; - Control Alt D: Delete expression
-
-;; Interactive development:
-;; - Control E: Evaluate expression
-;; - Alt E: Evaluate file
-
-;; The default keys for the above commands are unbound.  All other Emacs keys
-;; remain the same.  (If you typically used Control H to get help, try F1
-;; instead.)
-
 ;;; Code:
 
 
@@ -101,7 +49,7 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
-;; Enable C-x C-j for dired-jump.
+;; For `dired-jump'.
 (require 'dired-x)
 
 
@@ -129,9 +77,8 @@
 
 ;; Use C-z to undo, C-c to copy, C-x to cut, C-v to paste and M-v to paste the
 ;; previous paste.  (Also delete text as you begin typing or paste.)
-(modern-unset-keys "C-/" "M-w" "C-w" "C-y" "M-y")
+(modern-unset-keys "C-/" "M-w" "C-w" "C-y")
 (cua-mode)
-(global-set-key (kbd "M-v") 'cua-yank-pop)
 
 ;; Use C-h / M-h / C-M-h to move left, C-l / M-l / C-M-l to move right, C-j to
 ;; move down and C-k to move up.  By evil non-coincidence, these are Vi's
@@ -159,12 +106,13 @@
 
 ;; Use C-o to open [files], C-b to switch [buffers], C-s to save, and C-M-s to
 ;; save-as.
-(modern-unset-keys "C-x C-f" "C-x b" "C-x s" "C-x C-w")
+(modern-unset-keys "C-x C-f" "C-x b" "C-x s" "C-x C-w" "C-x C-j")
 (global-set-key (kbd "C-o") 'ido-find-file)
 (define-key dired-mode-map (kbd "C-o") 'ido-find-file)
 (global-set-key (kbd "C-b") 'ido-switch-buffer)
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-M-s") 'ido-write-file)
+(global-set-key (kbd "C-/") 'dired-jump)
 (add-hook
  'ido-setup-hook
  (lambda ()
