@@ -118,7 +118,7 @@ Tip: Try out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Ctrl Shift Backspace</kbd>: Delete line_
 - _<kbd>Alt Y</kbd>: Cycle through previous copies (after <kbd>Ctrl V</kbd>)_
 - _<kbd>Alt ;</kbd>: Insert a comment or comment-out a selection_
-- _<kbd>Alt Q</kbd>: Fit text within the 80-character column mark_
+- _<kbd>Alt Q</kbd>: Fit text within 80 columns, if possible_
 
 ### Useful Emacs utilities
 
