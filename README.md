@@ -13,13 +13,14 @@ enable `modern-opinionated`.
 
 ## Installation
 
-First download and install Emacs for [GNU/Linux][], [Mac OS][] or [Windows][].
+First download and install the latest Emacs for [GNU/Linux][], [Mac OS][] or
+[Windows][].
 
 [GNU/Linux]: http://ftp.gnu.org/gnu/emacs/emacs-24.4.tar.gz
 [Mac OS]: http://emacsformacosx.com/
 [Windows]: http://ftp.gnu.org/gnu/emacs/windows/emacs-24.4-bin-i686-pc-mingw32.zip
 
-From your terminal (*nixes):
+Then, from your terminal (*nixes):
 
 ```bash
 cd ~/.emacs.d
@@ -37,8 +38,8 @@ cd lisp
 git clone https://github.com/jacksonrayhamilton/modern.el.git
 ```
 
-In your `~/.emacs` file (*nixes) or `C:\Users\USER\AppData\Roaming\.emacs`
-(Windows):
+And finally in your `~/.emacs` file (*nixes) or
+`C:\Users\USER\AppData\Roaming\.emacs` (Windows):
 
 ```lisp
 (add-to-list 'load-path "~/.emacs.d/lisp/modern.el")
