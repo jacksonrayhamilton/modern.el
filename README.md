@@ -66,8 +66,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt Backspace</kbd>: Delete 1 word behind_
 - <kbd>Ctrl Alt D</kbd>: Delete expression
 - _<kbd>Ctrl Shift Backspace</kbd>: Delete line_
-- _<kbd>Alt Y</kbd>: Cycle through previous copies and pastes (after pressing
-  <kbd>Ctrl V</kbd>)_
+- _<kbd>Alt Y</kbd>: Cycle through previous copies (after <kbd>Ctrl V</kbd>)_
 - _<kbd>Alt ;</kbd>: Insert a comment or comment-out a selection_
 - _<kbd>Alt Q</kbd>: Fit text within the 80-character column mark_
 
