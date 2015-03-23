@@ -42,6 +42,7 @@
 ;; - Control O: Open a file (or create a new one)
 ;; - Control B: Switch to another open file
 ;; - Control S: Save the current file
+;; - Control Alt S: Save the current file with a different name
 ;; - Control W: Close the current file
 
 ;; Searching:
@@ -50,13 +51,15 @@
 ;; - Control R: Find and replace
 ;; - Alt R: Find and replace by regular expression
 
-;; Screens:
-;; - Control 0: Hide the focused screen
-;; - Control 1: Only show the focused screen
+;; Screen sections:
+;; - Control 0: Hide the focused section
+;; - Control 1: Show only the focused section
 ;; - Control 2: Split screen horizontally
 ;; - Control 3: Split screen vertically
+;; - Alt B: Switch to another visible section
 
 ;; Advanced text manipulation:
+;; - Alt V: Paste the previous paste (immediately after pasting with Control V)
 ;; - Control Alt D: Delete expression
 
 ;; Interactive development:
@@ -119,60 +122,22 @@
 (require 'comint)  ; comint-mode-map
 (require 'ido)     ; ido-completion-map
 
-(dolist
-    (key
-     '(;; Use C-c for copy, C-x for cut, and C-v for paste.
-       "M-w" "C-w" "C-y"
+(defun modern-unset-keys (&rest keys)
+  "Unset KEYS."
+  (dolist (key keys)
+    (global-unset-key (kbd key))))
 
-       ;; Use C-z for undo.
-       "C-/"
-
-       ;; Use h, j, k, l, "," and "." instead of the normal movement keys.
-       "C-f" "M-f" "C-M-f" "C-b" "M-b" "C-M-b" "C-p" "C-n"
-       "C-a" "C-e" "M-a" "M-e"
-
-       ;; Navigate with the mouse rather than by screenfuls.
-       "C-v" "M-v"
-
-       ;; Use C-f for find and C-r for find and replace.  Replace control with
-       ;; meta for the regexp version.
-       "C-s" "C-M-s" "M-%" "C-M-%"
-
-       ;; Use C-o for opening, C-b for switching, C-s for saving and C-M-s for
-       ;; saving-as.
-       "C-x C-f" "C-x b" "C-x s" "C-x C-w"
-
-       ;; Use C-w to close.  Also, C-w is bound to kill-this-buffer, which only
-       ;; prompts when killing unsaved buffers.
-       "C-x k"
-
-       ;; Use C-0, C-1, C-2 and C-3 for window manipulation.
-       "C-x 0" "C-x 1" "C-x 2" "C-x 3"
-
-       ;; Use C-a to select all.
-       "C-x h"
-
-       ;; Use C-e to eval the last sexp.
-       "C-x C-e"
-
-       ;; Use C-M-d to kill sexps.
-       "C-M-k"))
-  (global-unset-key (kbd key)))
-
-;; Unset the number keys.  They are rarely if ever useful, and with these
-;; bindings they are more often pressed accidentally.
-(mapc
- (lambda (number)
-   (global-unset-key (kbd (format "C-%s" number))))
- (number-sequence 0 9))
-
-;; Use C-c for copy, C-x for cut, and C-v for paste.  (Also delete text as you
-;; begin typing or paste.)
+;; Use C-z to undo, C-c to copy, C-x to cut, C-v to paste and M-v to paste the
+;; previous paste.  (Also delete text as you begin typing or paste.)
+(modern-unset-keys "C-/" "M-w" "C-w" "C-y" "M-y")
 (cua-mode)
+(global-set-key (kbd "M-v") 'cua-yank-pop)
 
-;; Use Vi's navigation keys: h (left), j (down), k (up) and l (right).  "j"
-;; looks like a down arrow; "h" is on the left, and "l" is on the right.  By
-;; process of elimination, "k" must mean "up".
+;; Use C-h / M-h / C-M-h to move left, C-l / M-l / C-M-l to move right, C-j to
+;; move down and C-k to move up.  By evil non-coincidence, these are Vi's
+;; navigation keys.  "j" looks like a down arrow; "h" is on the left, and "l" is
+;; on the right.  By process of elimination, "k" must mean "up".
+(modern-unset-keys "C-M-f" "C-M-b" "C-p" "C-n") ; C-f, M-f, C-b and M-b are used
 (global-set-key (kbd "C-h") 'backward-char)
 (global-set-key (kbd "M-h") 'backward-word)
 (global-set-key (kbd "C-M-h") 'backward-sexp)
@@ -185,13 +150,16 @@
 (global-set-key (kbd "C-M-l") 'forward-sexp)
 (define-key comint-mode-map (kbd "C-M-l") 'forward-sexp)
 
-;; "," and "." share keys with "<" and ">", which look like left and right
-;; arrows, which indicate which direction to move.
+;; Use C-, to move to the beginning of the line and C-. to move to the end.  ","
+;; and "." share keys with "<" and ">", which look like left and right arrows,
+;; which indicate the direction to move.
+(modern-unset-keys "M-a" "M-e") ; C-a and C-e are used
 (global-set-key (kbd "C-,") 'move-beginning-of-line)
 (global-set-key (kbd "C-.") 'move-end-of-line)
 
-;; Use C-o for opening [files], C-b for switching [buffers], C-s for saving, and
-;; C-M-s for "saving-as".
+;; Use C-o to open [files], C-b to switch [buffers], C-s to save, and C-M-s to
+;; save-as.
+(modern-unset-keys "C-x C-f" "C-x b" "C-x s" "C-x C-w")
 (global-set-key (kbd "C-o") 'ido-find-file)
 (define-key dired-mode-map (kbd "C-o") 'ido-find-file)
 (global-set-key (kbd "C-b") 'ido-switch-buffer)
@@ -206,10 +174,12 @@
    (define-key ido-completion-map (kbd "C-M-s") 'ido-fallback-command)))
 
 ;; Use C-w to close, like in a web browser.
+(modern-unset-keys "C-x k")
 (global-set-key (kbd "C-w") 'kill-this-buffer)
 
-;; Use C-f for find and C-r for find and replace.  Replace control with meta for
-;; the regexp version.
+;; Use C-f to find and C-r to find and replace.  Replace control with meta for
+;; the regexp versions.
+(modern-unset-keys "M-%" "C-M-%") ; C-s and C-M-s are used
 (global-set-key (kbd "C-f") 'isearch-forward)
 (define-key isearch-mode-map (kbd "C-s") nil)
 (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
@@ -217,16 +187,23 @@
 (global-set-key (kbd "C-r") 'query-replace)
 (global-set-key (kbd "M-r") 'query-replace-regexp)
 
-;; Use C-0, C-1, C-2 and C-3 for window manipulation.  (Exchange "C-x" for "C".)
+;; Use C-0, C-1, C-2 and C-3 to manipulate windows.  (Exchange C-x with C.)
+(modern-unset-keys
+ "C-x 0" "C-x 1" "C-x 2" "C-x 3"
+ "C-4" "C-5" "C-6" "C-7" "C-8" "C-9"
+ "C-x o")
 (global-set-key (kbd "C-0") 'delete-window)
 (global-set-key (kbd "C-1") 'delete-other-windows)
 (global-set-key (kbd "C-2") 'split-window-below)
 (global-set-key (kbd "C-3") 'split-window-right)
+(global-set-key (kbd "M-b") 'other-window)
 
 ;; Use C-a to select all.
+(modern-unset-keys "C-x h")
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 
 ;; Eval is fun; use C-e and M-e to evaluate expressions and buffers.
+(modern-unset-keys "C-x C-e")
 (global-set-key (kbd "C-e") 'eval-last-sexp)
 (global-set-key (kbd "M-e") 'eval-buffer)
 

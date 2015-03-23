@@ -41,13 +41,16 @@ without imposing too many opinionated features on them.
 - <kbd>Control R</kbd>: Find and replace
 - <kbd>Alt R</kbd>: Find and replace by regular expression
 
-### Screens:
-- <kbd>Control 0</kbd>: Hide the focused screen
-- <kbd>Control 1</kbd>: Only show the focused screen
+### Screen sections:
+- <kbd>Control 0</kbd>: Hide the focused section
+- <kbd>Control 1</kbd>: Show only the focused section
 - <kbd>Control 2</kbd>: Split screen horizontally
 - <kbd>Control 3</kbd>: Split screen vertically
+- <kbd>Alt B</kbd>: Switch to another visible section
 
 ### Advanced text manipulation:
+- <kbd>Alt V</kbd>: Paste the previous paste (immediately after pasting with
+  <kbd>Control V</kbd>)
 - <kbd>Control Alt D</kbd>: Delete expression
 
 ### Interactive development:
