@@ -79,5 +79,5 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Alt :</kbd>: Evaluate an Emacs Lisp expression_
 
 ### Interactive development:
-- <kbd>Ctrl E</kbd>: Evaluate expression
+- <kbd>Ctrl E</kbd>: Evaluate expression before cursor
 - <kbd>Alt E</kbd>: Evaluate file
