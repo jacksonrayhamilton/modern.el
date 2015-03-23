@@ -138,8 +138,9 @@
        ;; meta for the regexp version.
        "C-s" "C-M-s" "M-%" "C-M-%"
 
-       ;; Use C-o for opening, C-b for switching, and C-s for saving.
-       "C-x C-f" "C-x b" "C-x s"
+       ;; Use C-o for opening, C-b for switching, C-s for saving and C-M-s for
+       ;; saving-as.
+       "C-x C-f" "C-x b" "C-x s" "C-x C-w"
 
        ;; Use C-w to close.  Also, C-w is bound to kill-this-buffer, which only
        ;; prompts when killing unsaved buffers.
@@ -189,16 +190,20 @@
 (global-set-key (kbd "C-,") 'move-beginning-of-line)
 (global-set-key (kbd "C-.") 'move-end-of-line)
 
-;; Use C-o for opening [files], C-b for switching [buffers], and C-s for saving.
+;; Use C-o for opening [files], C-b for switching [buffers], C-s for saving, and
+;; C-M-s for "saving-as".
 (global-set-key (kbd "C-o") 'ido-find-file)
 (define-key dired-mode-map (kbd "C-o") 'ido-find-file)
+(global-set-key (kbd "C-b") 'ido-switch-buffer)
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-M-s") 'ido-write-file)
 (add-hook
  'ido-setup-hook
  (lambda ()
    (define-key ido-completion-map (kbd "C-x C-f") nil)
-   (define-key ido-completion-map (kbd "C-o") 'ido-fallback-command)))
-(global-set-key (kbd "C-b") 'ido-switch-buffer)
-(global-set-key (kbd "C-s") 'save-buffer)
+   (define-key ido-completion-map (kbd "C-x C-w") nil)
+   (define-key ido-completion-map (kbd "C-o") 'ido-fallback-command)
+   (define-key ido-completion-map (kbd "C-M-s") 'ido-fallback-command)))
 
 ;; Use C-w to close, like in a web browser.
 (global-set-key (kbd "C-w") 'kill-this-buffer)

@@ -32,6 +32,7 @@ without imposing too many opinionated features on them.
 - <kbd>Control O</kbd>: Open a file (or create a new one)
 - <kbd>Control B</kbd>: Switch to another open file
 - <kbd>Control S</kbd>: Save the current file
+- <kbd>Control Alt S</kbd>: Save the current file with a different name
 - <kbd>Control W</kbd>: Close the current file
 
 ### Searching:
