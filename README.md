@@ -61,6 +61,7 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl .</kbd>: End of line
 
 ### Advanced text manipulation:
+- _<kbd>Ctrl Space</kbd>: Start selecting text_
 - _<kbd>Ctrl D</kbd>: Delete 1 character ahead_
 - _<kbd>Alt D</kbd>: Delete 1 word ahead_
 - _<kbd>Alt Backspace</kbd>: Delete 1 word behind_
