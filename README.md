@@ -83,7 +83,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl R</kbd>: Find and replace
 - <kbd>Alt R</kbd>: Find and replace by regular expression
 
-Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
+Tip: Try out regular expressions with <kbd>Alt X re-builder</kbd>.
 
 ### Screen sections
 
@@ -105,6 +105,8 @@ Tip: Test out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl K</kbd>: Previous line
 - <kbd>Ctrl ,</kbd>: Beginning of line
 - <kbd>Ctrl .</kbd>: End of line
+
+(Though the arrow keys and your mouse work too.)
 
 ### Advanced text manipulation
 
