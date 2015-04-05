@@ -96,11 +96,11 @@
   (modern-set-key "C-x C-w" nil)
   (modern-set-key "C-x C-j" nil)
 
-  (modern-set-key "C-o" 'ido-find-file)
-  (modern-set-key "C-o" 'ido-find-file dired-mode-map)
-  (modern-set-key "C-b" 'ido-switch-buffer)
+  (modern-set-key "C-o" 'find-file)
+  (modern-set-key "C-o" 'find-file dired-mode-map)
+  (modern-set-key "C-b" 'switch-to-buffer)
   (modern-set-key "C-s" 'save-buffer)
-  (modern-set-key "C-M-s" 'ido-write-file)
+  (modern-set-key "C-M-s" 'write-file)
   (modern-set-key "C-/" 'dired-jump)
 
   ;; Use C-w to close, like in a web browser.

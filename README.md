@@ -135,3 +135,13 @@ also relatively large, making it easier to press.  See [here](MovingTheCtrlKey)
 for instructions.
 
 [MovingTheCtrlKey]: http://emacswiki.org/emacs/MovingTheCtrlKey
+
+### Enable `ido-mode`
+
+`ido-mode` lets you quickly browse open buffers and your filesystem.  This
+package's shortcuts are also supported in `ido-mode`.  Simply add the following
+to your `~/.emacs` file to enable it:
+
+```lisp
+(ido-mode 1)
+```
