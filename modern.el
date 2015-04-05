@@ -33,7 +33,8 @@
 (require 'dired-x) ; dired-jump
 (require 'ido)     ; ido-completion-map
 
-(defvar modern-saved-keys '())
+(defvar modern-saved-keys '()
+  "List of lists each containing keymap, key and command data.")
 
 (defun modern-save-key (keys &optional keymap)
   "Save the command for KEYS, from KEYMAP or global definition."
