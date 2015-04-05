@@ -64,7 +64,7 @@ beginners.  All other shortcuts are enabled by this package, and their defaults
 - <kbd>Ctrl S</kbd>: Save
 - <kbd>Ctrl Alt S</kbd>: Save as
 - <kbd>Ctrl W</kbd>: Close
-- <kbd>Ctrl /</kbd>: View directory
+- <kbd>Ctrl /</kbd>: View folder
 
 ### Searching
 
@@ -138,9 +138,9 @@ for instructions.
 
 ### Enable `ido-mode`
 
-`ido-mode` lets you quickly browse open buffers and your filesystem.  This
-package's shortcuts are also supported in `ido-mode`.  Simply add the following
-to your `~/.emacs` file to enable it:
+`ido-mode` lets you quickly browse open files and folders.  This package's
+shortcuts are also supported in `ido-mode`.  Simply add the following to your
+`~/.emacs` file to enable it:
 
 ```lisp
 (ido-mode 1)
