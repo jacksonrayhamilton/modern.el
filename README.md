@@ -1,15 +1,6 @@
 # modern.el
 
-Emacs can be challenging to use out-of-the-box due to many of its unusual
-default settings and keyboard shortcuts.  This package enables numerous
-"standard" text editor features, and rebinds many commonly-used commands to keys
-that are either familiar or more ergonomic.
-
-The goal of this package is make new and experienced Emacs users more productive
-without imposing too many opinionated features on them.
-
-But if they want some opinionated (even better) defaults, then they can always
-enable `modern-opinionated`.
+Replace Emacs's insane default shortcuts with modern ones.
 
 ## Installation
 
@@ -44,13 +35,12 @@ And finally in your `~/.emacs` file (*nixes) or
 ```lisp
 (add-to-list 'load-path "~/.emacs.d/lisp/modern.el")
 (require 'modern)
-(setq modern-opinionated t) ; Entirely optional
 (modern-enable)
 ```
 
 ## Keys
 
-Items in italics are default Emacs shortcuts, and are mentioned for the sake of
+Items in italics are default Emacs shortcuts, included here for the sake of
 beginners.  All other shortcuts are enabled by this package, and their defaults
 (like <kbd>Alt W</kbd> for "copy") are disabled.
 
@@ -133,28 +123,6 @@ Tip: Try out regular expressions with <kbd>Alt X re-builder</kbd>.
 - <kbd>Ctrl E</kbd>: Evaluate expression before cursor
 - <kbd>Alt E</kbd>: Evaluate file
 
-## Features
-
-- More visual cues
-- Menus and toolbars are hidden (Opinionated)
-- Formatting
-  - Use 80-column rule
-  - Use spaces for indentation (Opinionated)
-  - Strip trailing whitespace (Opinionated)
-  - End all files with newlines (Opinionated)
-- Quickly change and search directories with fuzzy matching
-- Auto-pair parentheses and quotation marks (Opinionated)
-- Less disruptive prompts and fewer of them
-- Hide uninteresting files in the directory view (Opinionated)
-
-Enable "(Opinionated)" features by doing `(setq modern-opinionated t)` before
-calling `(modern-enable)` in your `.emacs` file, like so:
-
-```lisp
-(setq modern-opinionated t)
-(modern-enable)
-```
-
 ## Recommendations
 
 ### Change <kbd>Caps Lock</kbd> to <kbd>Ctrl</kbd>
@@ -163,21 +131,7 @@ Remap your <kbd>Caps Lock</kbd> key to <kbd>Ctrl</kbd>.  This may seem like a
 weird and hard thing to do, but it isn't, and you will find it is much more
 convenient to have 2-3 <kbd>Ctrl</kbd> keys than to have a key exclusively for
 shouting at people on the Internet.  On many keyboards <kbd>Caps Lock</kbd> is
-also relatively large, making it easier to press.  See these
-[instructions](http://emacswiki.org/emacs/MovingTheCtrlKey).
+also relatively large, making it easier to press.  See [here](MovingTheCtrlKey)
+for instructions.
 
-### Packages
-
-If you want to extend Emacs further, try out some of these awesome packages:
-
-- [auto-complete](https://github.com/auto-complete/auto-complete) - Type big
-  words with few keystrokes
-- [expand-region](https://github.com/magnars/expand-region.el) - Select bigger
-  and bigger chunks of text
-- [flycheck](https://github.com/flycheck/flycheck) - Find errors in your code as
-  you type
-- [magit](https://github.com/magit/magit) - A faster way to use Git
-- [multiple-cursors](https://github.com/magnars/multiple-cursors.el) - Select
-  and edit multiple chunks of text simultaneously
-- [yasnippet](https://github.com/capitaomorte/yasnippet) - Expand abbreviations
-  into templates, interactively
+[MovingTheCtrlKey]: http://emacswiki.org/emacs/MovingTheCtrlKey

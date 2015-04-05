@@ -1,140 +1,45 @@
-;;; modern.el --- Modern settings to make Emacs easier to use.
+;;; modern.el --- Replace Emacs's insane default shortcuts with modern ones.
 
 ;; Copyright (C) 2015  Jackson Ray Hamilton
 
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
 ;; URL: https://github.com/jacksonrayhamilton/modern.el
 ;; Keywords: modern standard normal familiar ergonomic settings keybindings
-;; Version: 20150323
+;; Version: 20150404
 ;; Package-Requires: ((emacs "24.4"))
 
 ;;; Commentary:
 
-;; Emacs can be challenging to use out-of-the-box due to many of its unusual
-;; default settings and keyboard shortcuts.  This package enables numerous
-;; "standard" text editor features, and rebinds many commonly-used commands to
-;; keys that are either familiar or more ergonomic.
-
-;; The goal of this package is make new and experienced Emacs users more
-;; productive without imposing too many opinionated features on them.
-
-;; But if they want some opinionated (even better) defaults, then they can
-;; always enable `modern-opinionated'.
+;; Replace Emacs's insane default shortcuts with modern ones.
 
 ;;; Code:
 
 (require 'comint)  ; comint-mode-map
 (require 'dired-x) ; dired-jump
 (require 'ido)     ; ido-completion-map
-(require 'paren)   ; show-paren-delay
-
-
-(defgroup modern nil
-  "Settings for the `modern' package."
-  :group 'editing-basics
-  :group 'convenience)
-
-(defcustom modern-opinionated nil
-  "Enable opinionated settings.
-
-These settings are slightly more controversial, but provide
-additional functionality with the intent of improving your
-editing capabilities and experience."
-  :group 'modern)
 
 (defun modern-unset-keys (&rest keys)
   "Unset KEYS."
   (dolist (key keys)
     (global-unset-key (kbd key))))
 
+;;;###autoload
 (defun modern-enable ()
-  "Enable modern settings for text editing.
+  "Replace Emacs's insane default shortcuts with modern ones.
 
-This function causes irreversible side-effects, so if you want to
-revert them, restart Emacs."
+This function causes irreversible side-effects. To revert them,
+restart Emacs."
 
-
-  ;;; Appearance
-
-  ;; Show the column number in the modeline.
-  (column-number-mode)
-
-  ;; Match parentheses.
-  (show-paren-mode)
-  (setq show-paren-delay 0)
-
-  ;; Flexibly resize the window.
-  (setq frame-resize-pixelwise t)
-
-  (when modern-opinionated
-    ;; Hide annoying things.
-    (setq inhibit-splash-screen t)
-    (menu-bar-mode -1)
-    (tool-bar-mode -1)
-    (scroll-bar-mode -1))
-
-
-  ;;; Formatting
-
-  ;; Default to the commonly-employed "80-column rule."
-  (setq-default fill-column 80)
-
-  (when modern-opinionated
-    ;; Let's face it: Spaces are better than tabs.
-    (setq-default indent-tabs-mode nil)
-
-    ;; Clean up after yourself.
-    (add-hook 'before-save-hook 'delete-trailing-whitespace)
-    (setq require-final-newline t))
-
-
-  ;;; Features
-
-  ;; Quickly switch between open files and navigate through directories.
-  (setq ido-enable-flex-matching t)
-  (setq ido-everywhere t)
-  (ido-mode 1)
-
-  (when modern-opinionated
-    ;; Automatic pairing of quotation marks and parentheses is pretty useful,
-    ;; though some people might find it just as annoying.
-    (electric-pair-mode))
-
-
-  ;;; Overrides
-
-  ;; Make prompts less annoying.
-  (fset 'yes-or-no-p 'y-or-n-p)
-
-  ;; Ignore duplicates when cutting text.
-  (setq kill-do-not-save-duplicates t)
-
-  ;; Just create new files when looking for non-existent ones.
-  (setq confirm-nonexistent-file-or-buffer nil)
-
-
-  ;;; Dired
-
-  (when modern-opinionated
-    ;; Only omit auto-save files and lock files.
-    (setq dired-omit-files "^\\.?#")
-
-    ;; Omit "uninteresting" files.
-    (add-hook 'dired-mode-hook 'dired-omit-mode))
-
-
-  ;;; Keybindings
-
-  ;; Use C-z to undo, C-c to copy, C-x to cut, C-v to paste and M-v to paste the
-  ;; previous paste.  (Also delete text as you begin typing or paste.)
+  ;; Use C-z to undo, C-c to copy, C-x to cut, C-v to paste.  (Also delete text
+  ;; as you begin typing or paste.)
   (modern-unset-keys "C-/" "M-w" "C-w" "C-y")
   (cua-mode)
 
   ;; Use C-h / M-h / C-M-h to move left, C-l / M-l / C-M-l to move right, C-j to
-  ;; move down and C-k to move up.  By evil non-coincidence, these are Vi's
-  ;; navigation keys.  "j" looks like a down arrow; "h" is on the left, and "l" is
-  ;; on the right.  By process of elimination, "k" must mean "up".
-  (modern-unset-keys "C-M-f" "C-M-b" "C-p" "C-n") ; C-f, M-f, C-b and M-b are used
+  ;; move down and C-k to move up.  Evilly, these are Vi's navigation keys.  "j"
+  ;; looks like a down arrow; "h" is on the left, and "l" is on the right.  By
+  ;; elimination, "k" must mean "up".
+  (modern-unset-keys "C-M-f" "C-M-b" "C-p" "C-n") ; C-f, M-f, C-b, M-b are used
   (global-set-key (kbd "C-h") 'backward-char)
   (global-set-key (kbd "M-h") 'backward-word)
   (global-set-key (kbd "C-M-h") 'backward-sexp)
@@ -177,7 +82,7 @@ revert them, restart Emacs."
 
   ;; Use C-f to find and C-r to find and replace.  Replace control with meta for
   ;; the regexp versions.
-  (modern-unset-keys "M-%" "C-M-%") ; C-s and C-M-s are used
+  (modern-unset-keys "M-%" "C-M-%") ; C-s, C-M-s are used
   (global-set-key (kbd "C-f") 'isearch-forward)
   (define-key isearch-mode-map (kbd "C-s") nil)
   (define-key isearch-mode-map (kbd "C-f") 'isearch-repeat-forward)
@@ -186,6 +91,9 @@ revert them, restart Emacs."
   (global-set-key (kbd "M-r") 'query-replace-regexp)
 
   ;; Use C-0, C-1, C-2 and C-3 to manipulate windows.  (Exchange C-x with C.)
+  ;; Use M-b to switch between windows; C-b is frequently used to "change
+  ;; buffer", so the concept of "changing" is tangled with the the first letter
+  ;; of the word "buffer", hence where the "b" in M-b comes from.
   (modern-unset-keys
    "C-x 0" "C-x 1" "C-x 2" "C-x 3"
    "C-4" "C-5" "C-6" "C-7" "C-8" "C-9"
