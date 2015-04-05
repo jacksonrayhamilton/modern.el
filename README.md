@@ -100,7 +100,7 @@ Tip: Try out regular expressions with <kbd>Alt X re-builder</kbd>.
 
 ### Advanced text manipulation
 
-- _<kbd>Ctrl Space</kbd>: Start selecting text_
+- _<kbd>Ctrl Space</kbd>: Start / stop selecting text_
 - _<kbd>Ctrl D</kbd>: Delete 1 character ahead_
 - _<kbd>Alt D</kbd>: Delete 1 word ahead_
 - _<kbd>Alt Backspace</kbd>: Delete 1 word behind_
@@ -108,7 +108,7 @@ Tip: Try out regular expressions with <kbd>Alt X re-builder</kbd>.
 - _<kbd>Ctrl Shift Backspace</kbd>: Delete line_
 - _<kbd>Alt Y</kbd>: Cycle through previous copies (after <kbd>Ctrl V</kbd>)_
 - _<kbd>Alt ;</kbd>: Insert a comment or comment-out a selection_
-- _<kbd>Alt Q</kbd>: Fit text within 80 columns, if possible_
+- _<kbd>Alt Q</kbd>: Fit text within the column limit, if possible_
 
 ### Useful Emacs utilities
 
