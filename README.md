@@ -131,7 +131,7 @@ Remap your <kbd>Caps Lock</kbd> key to <kbd>Ctrl</kbd>.  This may seem like a
 weird and hard thing to do, but it isn't, and you will find it is much more
 convenient to have 2-3 <kbd>Ctrl</kbd> keys than to have a key exclusively for
 shouting at people on the Internet.  On many keyboards <kbd>Caps Lock</kbd> is
-also relatively large, making it easier to press.  See [here](MovingTheCtrlKey)
+also relatively large, making it easier to press.  See [here][MovingTheCtrlKey]
 for instructions.
 
 [MovingTheCtrlKey]: http://emacswiki.org/emacs/MovingTheCtrlKey
