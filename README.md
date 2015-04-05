@@ -35,7 +35,7 @@ And finally in your `~/.emacs` file (*nixes) or
 ```lisp
 (add-to-list 'load-path "~/.emacs.d/lisp/modern.el")
 (require 'modern)
-(modern-enable)
+(modern-mode)
 ```
 
 ## Keys
