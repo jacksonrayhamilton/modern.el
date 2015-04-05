@@ -4,7 +4,7 @@
 
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
 ;; URL: https://github.com/jacksonrayhamilton/modern.el
-;; Keywords: modern standard normal familiar ergonomic settings keybindings
+;; Keywords: abbrev convenience files frames
 ;; Version: 20150405
 ;; Package-Requires: ((emacs "24.4"))
 
