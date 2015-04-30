@@ -5,7 +5,7 @@
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
 ;; URL: https://github.com/jacksonrayhamilton/modern.el
 ;; Keywords: abbrev convenience files frames
-;; Version: 20150405
+;; Version: 20150430
 ;; Package-Requires: ((emacs "24.4"))
 
 ;; This file is not part of GNU Emacs.
@@ -174,6 +174,7 @@
 
   ;; Use C-M-d to kill expressions.
 
+  (modern-set-key "C-M-k" nil)
   (modern-set-key "C-M-d" 'kill-sexp))
 
 ;;;###autoload
