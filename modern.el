@@ -1,11 +1,11 @@
-;;; modern.el --- Replace Emacs's insane default shortcuts with modern ones. -*- lexical-binding: t; -*-
+;;; modern.el --- Modern Emacs keybindings  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2015  Jackson Ray Hamilton
 
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
-;; URL: https://github.com/jacksonrayhamilton/modern.el
+;; Version: 20150507
 ;; Keywords: abbrev convenience files frames
-;; Version: 20150430
+;; Homepage: https://github.com/jacksonrayhamilton/modern.el
 ;; Package-Requires: ((emacs "24.4"))
 
 ;; This file is not part of GNU Emacs.
