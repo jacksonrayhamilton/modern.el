@@ -58,7 +58,6 @@ for "copy") are disabled.
 - <kbd>Ctrl 1</kbd>: Show only the selected window
 - <kbd>Ctrl 2</kbd>: Split window horizontally
 - <kbd>Ctrl 3</kbd>: Split window vertically
-- <kbd>Alt B</kbd>: Switch to another window
 
 ### Text navigation
 

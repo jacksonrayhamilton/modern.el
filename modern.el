@@ -139,9 +139,6 @@
   (modern-set-key "M-r" 'query-replace-regexp)
 
   ;; Use C-0, C-1, C-2 and C-3 to manipulate windows.  (Exchange C-x with C.)
-  ;; Use M-b to switch between windows; C-b is frequently used to "change
-  ;; buffer", so the concept of "changing" is tangled with the the first letter
-  ;; of the word "buffer", hence where the "b" in M-b comes from.
 
   (modern-set-key "C-x 0" nil)
   (modern-set-key "C-x 1" nil)
@@ -159,7 +156,6 @@
   (modern-set-key "C-1" 'delete-other-windows)
   (modern-set-key "C-2" 'split-window-below)
   (modern-set-key "C-3" 'split-window-right)
-  (modern-set-key "M-b" 'other-window)
 
   ;; Use C-a to select all.
 
