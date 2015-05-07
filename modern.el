@@ -5,8 +5,8 @@
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
 ;; Version: 20150507
 ;; Keywords: abbrev convenience files frames
-;; Homepage: https://github.com/jacksonrayhamilton/modern.el
 ;; Package-Requires: ((emacs "24.4"))
+;; URL: https://github.com/jacksonrayhamilton/modern.el
 
 ;; This file is not part of GNU Emacs.
 
