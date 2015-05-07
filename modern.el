@@ -25,7 +25,7 @@
 
 ;;; Commentary:
 
-;; Replace Emacs's insane default shortcuts with modern ones.
+;; Replace Emacs's default shortcuts with modern ones.
 
 ;;; Code:
 
