@@ -3,7 +3,7 @@
 ;; Copyright (C) 2015  Jackson Ray Hamilton
 
 ;; Author: Jackson Ray Hamilton <jackson@jacksonrayhamilton.com>
-;; Version: 20150507
+;; Version: 20150514
 ;; Keywords: abbrev convenience files frames
 ;; Package-Requires: ((emacs "24.4"))
 ;; URL: https://github.com/jacksonrayhamilton/modern.el
@@ -150,7 +150,6 @@
   (modern-set-key "C-7" nil)
   (modern-set-key "C-8" nil)
   (modern-set-key "C-9" nil)
-  (modern-set-key "C-x o" nil)
 
   (modern-set-key "C-0" 'delete-window)
   (modern-set-key "C-1" 'delete-other-windows)
